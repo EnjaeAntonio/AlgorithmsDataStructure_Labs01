@@ -6,16 +6,23 @@
 
 // char[] chars = String.ToCharArray
 
-Console.WriteLine("Please enter a number");
+Console.WriteLine("Please enter how many words you would like");
 
 int userNum = Int32.Parse(Console.ReadLine());
 string[] userWords = new string[userNum];
 
-for (int i = 0; i < userNum; i++)
+if (userNum <= 0)
 {
-    Console.Write($"Enter word {i + 1} : ");
-    userWords[i] = Console.ReadLine();
+    Console.WriteLine("Sorry, please enter a positive number");
+} else
+{
+    for (int i = 0; i < userNum; i++)
+    {
+        Console.Write($"Enter word {i + 1} : ");
+        userWords[i] = Console.ReadLine();
+    }
 }
+
 
 Console.WriteLine("Enter a character: ");
 char userChar = Console.ReadKey().KeyChar;
