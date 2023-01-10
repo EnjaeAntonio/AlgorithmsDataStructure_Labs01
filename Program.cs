@@ -13,12 +13,13 @@ string[] userWords = new string[userNum];
 
 for (int i = 0; i < userNum; i++)
 {
-    Console.Write("Enter word " + (i + 1) + ": ");
+    Console.Write($"Enter word {i + 1} : ");
     userWords[i] = Console.ReadLine();
 }
 
 Console.WriteLine("Enter a character: ");
 char userChar = Console.ReadKey().KeyChar;
+
 int count = 0;
 int totalChars = 0;
 
@@ -33,6 +34,7 @@ foreach (string word in userWords)
         }
     }
 }
+    
 Console.WriteLine();
 Console.WriteLine($"The word {userChar} occurs {count} times");
 
