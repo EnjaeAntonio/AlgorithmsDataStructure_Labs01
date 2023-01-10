@@ -4,9 +4,7 @@
  * January 9th, 2023
  */
 
-// char[] chars = String.ToCharArray
-
-using System.Xml;
+// char[] chars = String.ToCharArray    
 
 Console.WriteLine("Please enter how many words you would like");
 int userWordCount = Int32.Parse(Console.ReadLine()); 
@@ -44,23 +42,20 @@ while (!char.IsLetter(userChar))
 }
 
 int count = 0;
-int totalChars = 0;
+string joinedWords = String.Join("", userWords);
 
-foreach (string word in userWords)
-{
-    totalChars += word.Length;
-    foreach (char c in word)
+    foreach (char c in joinedWords)
     {
-        if (c == userChar)
+        if (c == Char.ToLower(userChar))
         {
             count++;
         }
     }
-}
+
 Console.WriteLine();
-Console.WriteLine($"The word {userChar} occurs {count} times");
-Console.WriteLine((double)totalChars);
-if (count / (double)totalChars > 0.25)
+Console.WriteLine($"The letter {userChar} occurs {count} time(s)");
+
+if ((double)count / (double)joinedWords.Length > 0.25)
 {
     Console.WriteLine($"The character {userChar} represents more than 25% of the total number of characters.");
 }
