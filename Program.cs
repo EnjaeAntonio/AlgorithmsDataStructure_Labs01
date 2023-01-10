@@ -3,8 +3,7 @@
  * Enjae Antonio
  * January 9th, 2023
  */
-
-// char[] chars = String.ToCharArray    
+ 
 
 Console.WriteLine("Please enter how many words you would like");
 int userWordCount = Int32.Parse(Console.ReadLine()); 
@@ -54,8 +53,9 @@ string joinedWords = String.Join("", userWords);
 
 Console.WriteLine();
 Console.WriteLine($"The letter {userChar} occurs {count} time(s)");
+int percentOfOccurence = (int)(((double)count / (double)joinedWords.Length) * 100);
 
-if ((double)count / (double)joinedWords.Length > 0.25)
+if (percentOfOccurence > 25)
 {
     Console.WriteLine($"The character {userChar} represents more than 25% of the total number of characters.");
 }
