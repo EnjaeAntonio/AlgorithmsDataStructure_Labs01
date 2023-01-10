@@ -22,9 +22,10 @@ for (int i = 0; i < wordCount; i++)
     Console.Write($"Enter word {i + 1} : ");
     string enteredWords = Console.ReadLine();
 
-    while(enteredWords.Length < 1)
+    while(enteredWords.Length <= 1)
     {
         Console.WriteLine("Sorry, you must have at least one character");
+        Console.Write($"Enter word {i + 1} : ");
         enteredWords = Console.ReadLine();
     }
     userWords[i] = enteredWords;
@@ -56,10 +57,10 @@ int percentOfOccurence = (int)(((double)count / (double)joinedWords.Length) * 10
 
 if (percentOfOccurence > 25)
 {
-    Console.WriteLine($"The character {userChar} represents more than 25% of the total number of characters.");
+    Console.WriteLine($"The character '{userChar}' represents more than 25% of the total number of characters.");
 }
 else
 {
-    Console.WriteLine($"The character {userChar} does not represent more than 25% of the total number of characters.");
+    Console.WriteLine($"The character '{userChar}' does not represent more than 25% of the total number of characters.");
 }
 
