@@ -9,24 +9,32 @@
 Console.WriteLine("Please enter how many words you would like");
 
 
-int wordCountInput = Int32.Parse(Console.ReadLine()); // Console.ReadLine doesnt work alone because it is a string.
-string[] userWords = new string[wordCountInput];
+int userWordCount = Int32.Parse(Console.ReadLine()); // Console.ReadLine doesnt work alone because it is a string.
 
 
-while (wordCountInput <= 0)
+
+while (userWordCount <= 0)
 {
     Console.WriteLine("Sorry please enter a positive value");
-    wordCountInput = Int32.Parse(Console.ReadLine());
+    userWordCount = Int32.Parse(Console.ReadLine());
 }
 
-int wordCount = wordCountInput;
+int wordCount = userWordCount;
+string[] userWords = new string[userWordCount];
 
 for (int i = 0; i < wordCount; i++)
-    {
-        Console.Write($"Enter word {i + 1} : ");
-        userWords[i] = Console.ReadLine();
-    }
+{
+    Console.Write($"Enter word {i + 1} : ");
+    string inputWords = Console.ReadLine();
 
+    while(inputWords.Length < 1)
+    {
+        Console.WriteLine("Sorry, you must have at least one character");
+        inputWords = Console.ReadLine();
+    }
+    userWords[i] = inputWords;
+    Console.WriteLine(inputWords);
+}
 
 Console.WriteLine("Enter a character: ");
 char userChar = Console.ReadKey().KeyChar;
