@@ -41,8 +41,7 @@ while (!char.IsLetter(userChar))
 }
 
 int count = 0;
-string joinedWords = String.Join("", userWords);
-
+string joinedWords = String.Join("", userWords).ToLower();
     foreach (char c in joinedWords)
     {
         if (c == Char.ToLower(userChar))
